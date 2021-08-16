@@ -9,10 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class JDBCDemo {
-	private static final Logger logger = LogManager.getLogger(JDBCDemo.class);
+	private static final Logger logger = LoggerFactory.getLogger(JDBCDemo.class);
 	public static void main(String[] args) {
 
 		String DB_URL = "jdbc:mysql://localhost/practice3";
@@ -40,7 +42,7 @@ public class JDBCDemo {
 		List<String> regions = new ArrayList<String>();
 		while(resultSet.next()) {
 			
-			logger.debug(resultSet.getInt(1));
+			logger.debug(resultSet.getInt(1)+"");
 			logger.debug(resultSet.getNString("REGION_NAME"));
 			regions.add(resultSet.getNString("REGION_NAME"));
 		}
