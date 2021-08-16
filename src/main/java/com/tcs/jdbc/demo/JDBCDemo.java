@@ -8,15 +8,20 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class JDBCDemo {
+	private static final Logger logger = LogManager.getLogger(JDBCDemo.class);
 	public static void main(String[] args) {
+
 		String DB_URL = "jdbc:mysql://localhost/practice3";
 		String DB_USER = "root";
 		String DB_PASSWORD = "Nuvelabs123$";
 		
 		try(Connection connection = DriverManager.getConnection(DB_URL,DB_USER, DB_PASSWORD);
 			Statement statement = connection.createStatement();){
-			create(statement);
+//			create(statement);
 			retrieve(statement);
 //			update(statement);
 //			delete(statement);
@@ -34,10 +39,10 @@ public class JDBCDemo {
 		ResultSet resultSet = statement.executeQuery("SELECT * from regions where REGION_NAME LIKE 'A%'");
 		List<String> regions = new ArrayList<String>();
 		while(resultSet.next()) {
-			System.out.println(resultSet.getInt(1));
-			System.out.println(resultSet.getNString("REGION_NAME"));
+			
+			logger.debug(resultSet.getInt(1));
+			logger.debug(resultSet.getNString("REGION_NAME"));
 			regions.add(resultSet.getNString("REGION_NAME"));
-			System.out.println(regions);
 		}
 		return null;
 	}
