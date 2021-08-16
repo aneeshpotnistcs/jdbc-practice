@@ -6,3 +6,7 @@
 2021-08-16 09:28:12,675 DEBUG c.t.j.d.JDBCDemo [main] Asia
 2021-08-16 09:28:12,675 DEBUG c.t.j.d.JDBCDemo [main] 3
 2021-08-16 09:28:12,675 DEBUG c.t.j.d.JDBCDemo [main] Australia
+2021-08-16 09:30:52,864 DEBUG c.t.j.d.JDBCDemo [main] 1
+2021-08-16 09:30:52,867 DEBUG c.t.j.d.JDBCDemo [main] Asia
+2021-08-16 09:30:52,867 DEBUG c.t.j.d.JDBCDemo [main] 3
+2021-08-16 09:30:52,867 DEBUG c.t.j.d.JDBCDemo [main] Australia
