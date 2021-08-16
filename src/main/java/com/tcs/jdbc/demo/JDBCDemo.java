@@ -41,7 +41,7 @@ public class JDBCDemo {
 		List<String> regions = new ArrayList<String>();
 		while(resultSet.next()) {
 			
-			logger.debug(resultSet.getInt(1)+"");
+			logger.debug("id={}",resultSet.getInt(1));//parameterized logging
 			logger.debug(resultSet.getNString("REGION_NAME"));
 			regions.add(resultSet.getNString("REGION_NAME"));
 		}
